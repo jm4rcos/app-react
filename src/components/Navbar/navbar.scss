@@ -1,0 +1,108 @@
+nav{
+  width: 100%;
+  height: 92px;
+  background: #FEFEFE;
+  box-shadow: 0 5px 6px #00000024;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 2rem;
+
+  z-index: 100;
+
+  .logos{
+    display: flex;
+    gap: 2rem;
+
+    .logo{
+      height: 43px; width: 60px;
+    }
+
+    .porto{
+      height: 31.35px; width: 98.45px;
+    }
+  }
+
+  button{
+    display: none;
+  }
+
+  #hidden{
+    display: flex;
+  }
+
+  ul{
+    display: flex;
+    gap: 1rem;
+
+    
+
+    li{
+      list-style: none;
+
+      a{
+        text-decoration: none;
+        color: #D6A430;
+        font-weight: 500;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 840px){
+  nav{
+    height: 62px;
+
+    button{
+      outline: none;
+      background: none;
+      height: 21.98px; width: 35.16px;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      
+      div{
+        width: 100%;
+        background: #000;
+        height: 2.47px;
+        position: relative;
+  
+        & + div{
+          margin-top: 8px;
+        }
+      }
+    }
+
+    #hidden{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      position: absolute;
+      left: 0;
+      top: 64px;
+      height: 100%;
+      width: 100%;
+      background: #9A6D0C;
+      padding: 20px 16px;
+
+      a{
+        color: #fff;
+        font-size: 21px;
+        text-transform: uppercase;
+        line-height: 3rem;
+      }
+      span{
+        width: 100%;
+        background: #EFC566;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        margin-top: 53px;
+      }
+    }
+  }
+}
