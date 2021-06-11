@@ -37,8 +37,6 @@ nav{
     display: flex;
     gap: 1rem;
 
-    
-
     li{
       list-style: none;
 
@@ -56,6 +54,10 @@ nav{
   nav{
     height: 62px;
 
+    ul{
+      display: none;
+    }
+
     button{
       outline: none;
       background: none;
@@ -65,15 +67,26 @@ nav{
       display: flex;
       flex-direction: column;
       
+      
       div{
         width: 100%;
         background: #000;
         height: 2.47px;
         position: relative;
+        transition: .3s;
   
         & + div{
           margin-top: 8px;
         }
+      }
+
+      .close1{
+        transform: rotate(45deg);
+        margin-top: 5px;
+      }
+      .close2{
+        transform: rotate(-45deg);
+        margin-top: -2px;
       }
     }
 

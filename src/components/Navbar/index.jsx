@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './navbar.scss'
 
 const Nav = () => {
-  const [menu, setMenu] = useState(true)
+  const [menu, setMenu] = useState(false)
 
   return (
     <nav>
@@ -12,10 +12,19 @@ const Nav = () => {
         <img className='porto' src='assets/porto-seguro.png' alt="" />
       </div>
 
-      <button>
-        <div></div>
-        <div></div>
-        <div></div>
+      <button onClick={() => setMenu(!menu)}>
+        {!menu ? (
+        <>
+          <div></div>
+          <div></div>
+          <div></div>
+        </>
+        ) 
+        : 
+        (<>
+          <div className='close1'></div>
+          <div className='close2'></div>
+        </>)}
       </button>
 
       <ul id={ menu ? 'hidden' : '' }>
