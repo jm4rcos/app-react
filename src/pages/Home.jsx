@@ -1,14 +1,16 @@
 import React from 'react'
-import Banner from '../components/Banner'
 
+import Banner from '../components/Banner'
 import Navbar from '../components/Navbar'
+
+import Provider from '../context/Provider'
 
 const Home  = () => {
   return(
-  <>
-    <Navbar/>
-    <Banner/>
-  </>)
+    <Provider>
+      <Navbar/>
+      <Banner/>
+    </Provider>)
 }
 
 export default Home

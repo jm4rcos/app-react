@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useContext } from 'react'
+
+import { MenuContext } from '../../context/MenuContext'
 
 import './navbar.scss'
 
 const Nav = () => {
-  const [menu, setMenu] = useState(false)
+  const { menu, setMenu} = useContext(MenuContext)
 
   return (
     <nav>
