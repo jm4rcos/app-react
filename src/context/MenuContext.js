@@ -4,7 +4,7 @@ const MenuData = {
   size: Number,
   menu: Boolean,
   handleSize: () => {},
-  setMenu: () => {}
+  setMenu: () => {},
 }
 
 const MenuContext = createContext(MenuData)

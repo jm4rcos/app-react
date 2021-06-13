@@ -32,23 +32,23 @@ const Nav = () => {
 
       <ul id={ menu ? 'hidden' : '' }>
         <li>
-          <a href="#">Sobre</a>
+          <a href="sobre">Sobre</a>
           <span></span>
         </li>
         <li>
-          <a href="#">Hospitais</a>
+          <a href="hospitais">Hospitais</a>
           <span></span>
         </li>
         <li>
-          <a href="#">Benefícios</a>
+          <a href="benefícios">Benefícios</a>
           <span></span>
         </li>
         <li>
-          <a href="#">Serviços especiais</a>
+          <a href="serviços">Serviços especiais</a>
           <span></span>
         </li>
         <li>
-          <a href="#">Contato</a>
+          <a href="contato">Contato</a>
           <span></span>
         </li>
       </ul>

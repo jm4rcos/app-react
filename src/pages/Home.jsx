@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Banner from '../components/Banner'
 import Navbar from '../components/Navbar'
+import Destaque from '../components/Destaque'
 
 import Provider from '../context/Provider'
 
@@ -10,6 +11,7 @@ const Home  = () => {
     <Provider>
       <Navbar/>
       <Banner/>
+      <Destaque/>
     </Provider>)
 }
 

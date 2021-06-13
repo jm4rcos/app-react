@@ -12,7 +12,7 @@ section{
 
   .bannerText{
     position: absolute;
-    top: 25%; left: 0;
+    top: 30%; left: 0;
     width: 100%;
     text-align: left;
     
@@ -107,13 +107,10 @@ section{
 
 @media (max-width: 550px){
   section{
-    img{
-      height: auto;
-    }
 
     .bannerText{
       position: absolute;
-      top: 50%; left: 0;
+      top: 33.3%; left: 0;
       width: 100%;
       text-align: left;
       
@@ -135,6 +132,7 @@ section{
           font-size: 17px;
           display: flex;
           margin-left: 2rem;
+          
           h2{
             font-size: 17px;
           }
@@ -153,7 +151,7 @@ section{
           }
   
           h2{
-            margin-left: 1rem;
+            margin-left: -.9rem;
           }
   
           h3{
