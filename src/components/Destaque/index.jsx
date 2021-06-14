@@ -1,11 +1,32 @@
-import React, { useState, useEffect } from 'react'
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState } from 'react'
 import { IoIosArrowDown } from 'react-icons/io'
-import {BiMap} from 'react-icons/bi'
+
 
 import './destaque.scss'
+import { useContext } from 'react'
+import { MenuContext } from '../../context/MenuContext'
+import Modal from '../Modal'
 
 const Destaque = () => {
-  const [modal, setModal] = useState(false)
+  const { size, modal, setModal, handleSize} = useContext(MenuContext)
+  const [showDropDown, setShowDropDown] = useState('')
+
+  function setDropDown(){
+    if (size >= 940 && modal){
+      setShowDropDown('dropDown')
+    }
+    else{
+      setShowDropDown('noDropDown')
+    }
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('resize', handleSize)
+    setDropDown()
+  }, [handleSize, setDropDown, size])
+
 
   return(<section className='cardsSection'>
     <h1>Hospitais em destaque</h1>
@@ -23,27 +44,11 @@ const Destaque = () => {
             Hospital Vitória Barra
           </h2>
           <button onClick={() => setModal(!modal)}>
-            <IoIosArrowDown className='icon'/>
+            <IoIosArrowDown className={!modal ? 'icon' : 'dropDownIcon' }/>
           </button>
         </div>
-        
-        <div id='dropDown'>
-          <p>O Complexo Pediátrico do Hospital Vitória conta com uma equipe
-            de pronto atendimento formada por <strong>pediatras, cirurgiões e ortopedistas, </strong>
-            além de profissionais de diversas subespecialidades da pediatria, 
-            capacitados para assistência a urgências e emergências de pacientes
-            recém-nascidos e até os 18 anos de idade.
-          </p>
 
-          <BiMap/><strong>Endereço:</strong>
-            <div className='endereçoInfo'>
-              <p>Av. Jorge Curi, 550</p>
-              <p>Barra da Tijuca, Rio de Janeiro - RJ</p>
-              <p>22775-001</p>
-            </div>
-
-            <BiMap/><strong>Telefone:</strong> <p>Av. Jorge Curi, 550</p>
-        </div>
+        {modal && size < 940 && (<Modal/>)}
       </div>
 
       <div className='content'>
@@ -70,6 +75,9 @@ const Destaque = () => {
         </div>
       </div>
     </div>
+
+    {modal && size >= 940 && (<Modal/>)}
+
   </section>)
 }
 

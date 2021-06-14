@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MenuContext } from './MenuContext'
 
 export default function Provider({children}){
   const [size, setSize] = useState(window.innerWidth)
   const [menu, setMenu] = useState(false)
+  const [modal, setModal] = useState(false)
 
   const handleSize = () => {
     setSize(window.innerWidth)
@@ -14,7 +15,7 @@ export default function Provider({children}){
   }, [size])
 
   return(
-    <MenuContext.Provider value={{size, menu, setMenu}}>
+    <MenuContext.Provider value={{size, menu, setMenu, modal, setModal}}>
       {children}
     </MenuContext.Provider>
   )

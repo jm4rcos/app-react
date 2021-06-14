@@ -23,7 +23,6 @@
   p{
     font-size: 20px;
     color: #4B4B4B;
-    margin-bottom: 2rem;
   }
 
   .wrapper{
@@ -35,6 +34,7 @@
     justify-content: center;
 
     .content{
+      
       .card{
         display: flex;
         flex-direction: column;
@@ -45,6 +45,7 @@
         overflow: hidden;
         border-radius: 12px;
         box-shadow: 0 3px 6px #00000029;
+        margin-top: 2rem;
   
         img{
           height: 14.375rem;
@@ -65,20 +66,87 @@
             margin-top: -.5rem;
             color: #BFBFBF;
             font-size: 36px;
+            transition: .5s;
+          }
+
+          .dropDownIcon{
+            margin-top: -.5rem;
+            color: #BFBFBF;
+            font-size: 36px;
+            transform: rotate(180deg);
+            transition: .5s;
           }
         }
+      }
+
+      
+    }
+  }
+}
+
+#noDropDown{
+  display: none;
+}
+
+#dropDown{
+  background: #fff;
+  padding: 3.125rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px #00000029;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: row;
+
+  .separator{
+    height: 144px; width: 1px;
+    margin: 1rem;
+    background: #d8d8d8;
+  }
+
+  .dropDownText{
+    font-size: 20px;
+    color: #4B4B4B;
+    width: 100%;
+    position: relative;
+  }
+  .informações{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+
+    div{
+      display: flex;
+
+      strong{
+        margin-right: 10px;
+        font-size: 18px;
+      }
+
+      p{
+        color: #000000;
+        font-size: 18px;
+        margin-bottom: 2rem;
+      }
+      
+      
+      .endereçoInfo{
+        display: block;
       }
     }
   }
 }
+
+
 
 @media (max-width: 940px){
   .cardsSection{
 
     .wrapper{
       display: flex;
-      flex-direction: column;
-      gap: 2rem;  
+      flex-direction: column; 
     }
   }
 }
@@ -110,6 +178,47 @@
           .icon{
             font-size: 26px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 880px){
+  #dropDown{
+
+    padding: 2rem 2rem;
+    flex-direction: column;
+  
+    .separator{
+      height: 1px; width: 100%;
+      margin: 1rem;
+    }
+  }
+}
+
+@media (max-width: 500px){
+  #dropDown{
+  
+    .dropDownText{
+      font-size: 16px;
+    }
+    .informações{
+  
+      div{
+        strong{
+          font-size: 14px;
+        }
+  
+        p{
+          color: #000000;
+          font-size: 14px;
+          margin-bottom: 2rem;
+        }
+        
+        
+        .endereçoInfo{
+          display: block;
         }
       }
     }
